@@ -3,11 +3,11 @@ tasks:
         build:
             services:
                 web:
-                    image: docker.io/pswaine/hello-world
+                    image: ${IMAGE_NAME}
 
     deployment:
         deploy:
-            cluster: hello-world
+            cluster: ${CLUSTER}
             services:
                 web:
                     specification:
