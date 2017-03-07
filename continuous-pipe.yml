@@ -1,0 +1,15 @@
+tasks:
+    images:
+        build:
+            services:
+                web:
+                    image: docker.io/pswaine/hello-world
+
+    deployment:
+        deploy:
+            cluster: hello-world
+            services:
+                web:
+                    specification:
+                        accessibility:
+                            from_external: true
