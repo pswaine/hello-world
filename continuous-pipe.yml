@@ -5,6 +5,9 @@ tasks:
                 web:
                     image: ${IMAGE_NAME}
 
+    wait_product_owner:
+         manual_approval: ~
+
     deployment:
         deploy:
             cluster: ${CLUSTER}
