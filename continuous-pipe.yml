@@ -22,3 +22,7 @@ tasks:
                                   api_key: ${CLOUD_FLARE_API_KEY}
                               record_suffix: -hello-world.continuouspipe.net
                               proxied: true
+
+    integration:
+        web_hook:
+            url: ${WEBHOOK_URL}
