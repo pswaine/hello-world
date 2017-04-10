@@ -29,8 +29,3 @@ tasks:
     integration:
         web_hook:
             url: ${WEBHOOK_URL}
-
-pipelines:
-    - name: Production
-      condition: 'code_reference.branch in ["master"]'
-      tasks: [ images, wait_product_owner, deployment, integration ]
