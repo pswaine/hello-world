@@ -26,6 +26,9 @@ tasks:
                     specification:
                         accessibility:
                             from_external: true
+        run:
+            commands:
+                - cp /dist/test.txt /usr/share/nginx/html
 
     integration:
         web_hook:
