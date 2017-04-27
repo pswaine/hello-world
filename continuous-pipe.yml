@@ -27,6 +27,7 @@ tasks:
                         accessibility:
                             from_external: true
         run:
+            cluster: ${CLUSTER}
             commands:
                 - cp /dist/test.txt /usr/share/nginx/html
 
