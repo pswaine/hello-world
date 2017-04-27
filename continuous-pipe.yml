@@ -26,13 +26,6 @@ tasks:
                         accessibility:
                             from_external: true
 
-    migrations:
-        run:
-            cluster: ${CLUSTER}
-            image: ${IMAGE_NAME}
-            commands:
-                - cp /dist/test.txt /usr/share/nginx/html
-
     integration:
         web_hook:
             url: ${WEBHOOK_URL}
