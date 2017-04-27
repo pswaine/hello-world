@@ -3,10 +3,15 @@ tasks:
         build:
             services:
                 web:
-                    image: ${IMAGE_NAME}
                     steps:
-                        - docker_file_path: ./Dockerfile
+                        - docker_file_path: ./Dockerfile-build
+                          image: ${IMAGE_NAME_BUILD}
                           write_artifacts:
+                            - name: dist
+                              path: /dist
+                        - docker_file_path: ./Dockerfile
+                          image: ${IMAGE_NAME}
+                          read_artifacts:
                             - name: dist
                               path: /dist
 
