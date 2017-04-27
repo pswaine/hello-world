@@ -4,6 +4,8 @@ tasks:
             services:
                 web:
                     image: ${IMAGE_NAME}
+                    steps:
+                        - docker_file_path: ./Dockerfile
 
     wait_product_owner:
          manual_approval: ~
@@ -16,15 +18,6 @@ tasks:
                     specification:
                         accessibility:
                             from_external: true
-                    endpoints:
-                        - name: web
-                          cloud_flare_zone:
-                              zone_identifier: ${CLOUD_FLARE_ZONE}
-                              authentication:
-                                  email: ${CLOUD_FLARE_EMAIL}
-                                  api_key: ${CLOUD_FLARE_API_KEY}
-                              record_suffix: -hello-world.continuouspipe.net
-                              proxied: true
 
     integration:
         web_hook:
@@ -33,4 +26,4 @@ tasks:
 pipelines:
     - name: Production
       condition: 'code_reference.branch in ["master"]'
-      tasks: [ images, wait_product_owner, deployment, integration ]
+      tasks: [ images, deployment ]
