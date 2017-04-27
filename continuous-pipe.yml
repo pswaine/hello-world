@@ -28,6 +28,7 @@ tasks:
                             from_external: true
         run:
             cluster: ${CLUSTER}
+            image: ${IMAGE_NAME}
             commands:
                 - cp /dist/test.txt /usr/share/nginx/html
 
