@@ -41,4 +41,4 @@ tasks:
 pipelines:
     - name: Production
       condition: 'code_reference.branch in ["master"]'
-      tasks: [ images, deployment, migrations ]
+      tasks: [ images, migrations, deployment ]
