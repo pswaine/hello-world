@@ -1,1 +1,3 @@
+FROM nginx
+
 RUN mkdir /dist && touch /dist/test.txt && echo "test123" > /dist/test.txt
