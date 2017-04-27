@@ -6,6 +6,9 @@ tasks:
                     image: ${IMAGE_NAME}
                     steps:
                         - docker_file_path: ./Dockerfile
+                          write_artifacts:
+                            - name: dist
+                              path: /dist
 
     wait_product_owner:
          manual_approval: ~
