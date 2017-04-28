@@ -5,6 +5,8 @@ tasks:
                 web:
                     steps:
                         - docker_file_path: ./Dockerfile-build
+                          cache:
+                          - /anewcache
                           write_artifacts:
                             - name: mydist
                               path: /mydist
