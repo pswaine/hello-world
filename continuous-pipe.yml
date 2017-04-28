@@ -5,6 +5,7 @@ tasks:
                 web:
                     steps:
                         - docker_file_path: ./Dockerfile
+                          image: ${IMAGE_NAME}
                           cache:
                           - /buildcache
 
