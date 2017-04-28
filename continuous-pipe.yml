@@ -6,15 +6,15 @@ tasks:
                     steps:
                         - docker_file_path: ./Dockerfile-build
                           write_artifacts:
-                            - name: dist
-                              path: /dist
+                            - name: mydist
+                              path: /mydist
                         - docker_file_path: ./Dockerfile
                           image: ${IMAGE_NAME}
                           cache:
                           - /mycache
                           read_artifacts:
-                            - name: dist
-                              path: /dist
+                            - name: mydist
+                              path: /mydist
 
     wait_product_owner:
          manual_approval: ~
