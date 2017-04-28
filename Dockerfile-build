@@ -1,4 +1,3 @@
 FROM nginx
 
-RUN mkdir /buildcache && touch /buildcache/cache-test.txt && echo "cache123" > /buildcache/cache-test.txt
 RUN mkdir /dist && touch /dist/dist-test.txt && echo "dist123" > /dist/test.txt
