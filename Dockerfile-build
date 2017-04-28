@@ -1,4 +1,3 @@
 FROM nginx
 
-RUN mkdir -p /anewcache
 RUN mkdir /mydist && touch /mydist/mydist-test.txt && echo "mydist123" > /mydist/mydist-test.txt
