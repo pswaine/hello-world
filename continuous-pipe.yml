@@ -10,8 +10,6 @@ tasks:
                               path: /mydist
                         - docker_file_path: ./Dockerfile
                           image: ${IMAGE_NAME}
-                          cache:
-                          - /mycache
                           read_artifacts:
                             - name: mydist
                               path: /mydist
