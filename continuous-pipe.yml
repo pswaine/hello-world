@@ -4,17 +4,15 @@ tasks:
             services:
                 web:
                     steps:
-                        - docker_file_path: ./Dockerfile-build
-                          cache:
-                          - /anewcache
+                        - docker_file_path: ./docker/Buildfile
                           write_artifacts:
-                            - name: mydist
-                              path: /mydist
-                        - docker_file_path: ./Dockerfile
+                              - name: built-files-artifact
+                                path: /app/built-files
+                        - docker_file_path: ./docker/Dockerfile
                           image: ${IMAGE_NAME}
                           read_artifacts:
-                            - name: mydist
-                              path: /mydist
+                              - name: built-files-artifact
+                                path: /built-files
 
     wait_product_owner:
          manual_approval: ~
