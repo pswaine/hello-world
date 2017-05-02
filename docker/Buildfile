@@ -2,4 +2,4 @@ FROM nginx
 
 RUN touch ./test.txt && echo "test123" > ./test.txt
 
-COPY . /app/built-files
+COPY ./test.txt /app/built-files
